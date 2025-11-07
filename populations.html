@@ -20,17 +20,6 @@
         p {
             margin: 10px;
         }
-        map.addLayer({
-            id: 'population-layer',
-            type: 'fill',
-            source: 'population',
-            layout: {},
-            paint: {
-                'fill-color': '#f28cb1',
-                'fill-opacity': 0.5,
-                'fill-outline-color': '#000'
-            }
-});
 
         #map {
             position: absolute;
@@ -81,7 +70,7 @@
             container: 'map', 
             style: 'mapbox://styles/mapbox/light-v10', 
             zoom: 12, 
-            center: [47.608013, -122.335167] 
+            center: [-122.335167, 47.608013] 
         });
 
         async function geojsonFetch() {
@@ -92,6 +81,18 @@
                 type: 'geojson',
                 data: population
             });
+
+            map.addLayer({
+                id: 'population-layer',
+                type: 'fill',
+                source: 'population',
+                layout: {},
+                paint: {
+                    'fill-color': '#f28cb1',
+                    'fill-opacity': 0.5,
+                    'fill-outline-color': '#000'
+            }
+});
 
         }
 
