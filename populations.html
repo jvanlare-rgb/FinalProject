@@ -91,7 +91,7 @@
 
         async function geojsonFetch() {
             let response = await fetch('Data/population.geojson');
-            let stateData = await response.json();
+            let population = await response.json();
 
             map.addSource('population', {
                 type: 'geojson',
